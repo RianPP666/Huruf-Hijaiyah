@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue"
+    tools:context=".MenuUtamaActivity">
+
+    <TextView
+        android:id="@+id/titleLine1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Aplikasi Belajar"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/titleLine2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Huruf Hijaiyah"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleLine1" />
+
+    <ImageView
+        android:id="@+id/mosque"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginBottom="-10dp"
+        android:src="@drawable/icon_mosque"
+        app:layout_constraintBottom_toTopOf="@+id/vectorBottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/vectorBottom"
+        android:layout_width="0dp"
+        android:layout_height="300dp"
+        android:layout_marginBottom="4dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/rounded_blue_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/retangle_menu"
+        android:layout_width="328dp"
+        android:layout_height="300dp"
+        android:src="@drawable/icon_retangle_menu"
+        app:layout_constraintBottom_toBottomOf="@+id/vectorBottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mosque" />
+
+    <!-- Tombol Belajar Huruf -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnBelajarHuruf"
+        android:layout_width="270dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="#9DE8D4"
+        android:paddingVertical="12dp"
+        android:paddingStart="8dp"
+        android:text="Belajar Huruf"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:gravity="start|center_vertical"
+        app:cornerRadius="15dp"
+        app:icon="@drawable/icon_quran"
+        app:iconGravity="start"
+        app:iconPadding="12dp"
+        app:iconSize="40dp"
+        app:iconTint="@null"
+        app:layout_constraintEnd_toEndOf="@+id/retangle_menu"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/retangle_menu"
+        app:layout_constraintTop_toTopOf="@+id/retangle_menu"
+        app:rippleColor="#33000000" />
+
+    <!-- Tombol Tebak Huruf -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnTebakHuruf"
+        android:layout_width="270dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#FFD985"
+        android:gravity="start|center_vertical"
+        android:paddingVertical="12dp"
+        android:paddingStart="8dp"
+        android:text="Tebak Huruf"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:cornerRadius="15dp"
+        app:icon="@drawable/icon_question"
+        app:iconGravity="start"
+        app:iconPadding="12dp"
+        app:iconSize="40dp"
+        app:iconTint="@null"
+        app:layout_constraintEnd_toEndOf="@+id/retangle_menu"
+        app:layout_constraintStart_toStartOf="@+id/retangle_menu"
+        app:layout_constraintTop_toBottomOf="@+id/btnBelajarHuruf"
+        app:rippleColor="#33000000" />
+
+    <!-- Tombol Skor Saya -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnRiwayatBelajar"
+        android:layout_width="270dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#96DAFF"
+        android:gravity="start|center_vertical"
+        android:paddingVertical="12dp"
+        android:paddingStart="8dp"
+        android:text="Riwayat Belajar Huruf"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:cornerRadius="15dp"
+        app:icon="@drawable/icon_riwayat"
+        app:iconGravity="start"
+        app:iconPadding="10dp"
+        app:iconSize="40dp"
+        app:iconTint="@null"
+        app:layout_constraintEnd_toEndOf="@+id/retangle_menu"
+        app:layout_constraintStart_toStartOf="@+id/retangle_menu"
+        app:layout_constraintTop_toBottomOf="@+id/btnTebakHuruf"
+        app:rippleColor="#33000000" />
+
+    <!-- Tombol Surat Pendek -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSuratPendek"
+        android:layout_width="270dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#CDB2FF"
+        android:gravity="start|center_vertical"
+        android:paddingVertical="12dp"
+        android:paddingStart="8dp"
+        android:text="Surah Surah Pendek"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:cornerRadius="15dp"
+        app:icon="@drawable/icon_quran2"
+        app:iconGravity="start"
+        app:iconPadding="10dp"
+        app:iconSize="40dp"
+        app:iconTint="@null"
+        app:layout_constraintEnd_toEndOf="@+id/retangle_menu"
+        app:layout_constraintStart_toStartOf="@+id/retangle_menu"
+        app:layout_constraintTop_toBottomOf="@+id/btnRiwayatBelajar"
+        app:rippleColor="#33000000" />
+
+    <ImageView
+        android:id="@+id/cloud"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/icon_cloud"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/cloud2"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/icon_cloud"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/retangle_menu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/cloud3"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/icon_cloud"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleLine2" />
+
+    <ImageView
+        android:id="@+id/star"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/icon_star"
+        app:layout_constraintBottom_toTopOf="@+id/cloud2"
+        app:layout_constraintEnd_toStartOf="@+id/mosque" />
+
+    <ImageView
+        android:id="@+id/star2"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/icon_star"
+        app:layout_constraintStart_toEndOf="@+id/titleLine1"
+        app:layout_constraintTop_toBottomOf="@+id/titleLine2" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnProfil"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:backgroundTint="#F9E79F"
+        android:gravity="center"
+        android:insetLeft="0dp"
+        android:insetTop="0dp"
+        android:insetRight="0dp"
+        android:insetBottom="0dp"
+        app:iconPadding="0dp"
+        android:text=""
+        app:cornerRadius="25dp"
+        app:icon="@drawable/icon_user"
+        app:iconGravity="textStart"
+        app:iconSize="40dp"
+        app:iconTint="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:rippleColor="#33000000" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

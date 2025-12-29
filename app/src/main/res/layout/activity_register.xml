@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue"
+    tools:context=".RegisterActivity">
+
+    <ImageView
+        android:id="@+id/vectorBottom"
+        android:layout_width="0dp"
+        android:layout_height="300dp"
+        android:layout_marginBottom="4dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/rounded_blue_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/vectorCenter"
+        android:layout_width="340dp"
+        android:layout_height="500dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/retangle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.498" />
+
+    <ImageView
+        android:id="@+id/iconUserRegister"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="84dp"
+        android:contentDescription="Register User Icon"
+        android:src="@drawable/icon_user_register"
+        app:layout_constraintBottom_toTopOf="@+id/vectorCenter"
+        app:layout_constraintStart_toStartOf="@+id/vectorCenter"
+        app:layout_constraintEnd_toEndOf="@+id/vectorCenter"
+        android:layout_marginBottom="-60dp"/>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily=""
+        android:text="Daftar Akun Baru"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/vectorCenter"
+        app:layout_constraintStart_toStartOf="@+id/vectorCenter"
+        app:layout_constraintTop_toBottomOf="@+id/iconUserRegister" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_username"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="16dp"
+        app:boxCornerRadiusTopStart="16dp"
+        app:boxCornerRadiusTopEnd="16dp"
+        app:boxCornerRadiusBottomStart="16dp"
+        app:boxCornerRadiusBottomEnd="16dp"
+        android:hint="Username"
+        app:startIconDrawable="@drawable/ic_user"
+        app:layout_constraintEnd_toEndOf="@+id/vectorCenter"
+        app:layout_constraintStart_toStartOf="@+id/vectorCenter"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="text"
+            android:imeOptions="actionNext"
+            android:padding="16dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_password"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="16dp"
+        app:boxCornerRadiusTopStart="16dp"
+        app:boxCornerRadiusTopEnd="16dp"
+        app:boxCornerRadiusBottomStart="16dp"
+        app:boxCornerRadiusBottomEnd="16dp"
+        android:hint="Password"
+        app:startIconDrawable="@drawable/ic_lock"
+        app:endIconMode="password_toggle"
+        app:layout_constraintEnd_toEndOf="@+id/vectorCenter"
+        app:layout_constraintStart_toStartOf="@+id/vectorCenter"
+        app:layout_constraintTop_toBottomOf="@+id/til_username">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPassword"
+            android:imeOptions="actionNext"
+            android:padding="16dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_confirm_password"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="16dp"
+        app:boxCornerRadiusTopStart="16dp"
+        app:boxCornerRadiusTopEnd="16dp"
+        app:boxCornerRadiusBottomStart="16dp"
+        app:boxCornerRadiusBottomEnd="16dp"
+        android:hint="Konfirmasi Password"
+        app:startIconDrawable="@drawable/ic_lock"
+        app:endIconMode="password_toggle"
+        app:layout_constraintEnd_toEndOf="@+id/vectorCenter"
+        app:layout_constraintStart_toStartOf="@+id/vectorCenter"
+        app:layout_constraintTop_toBottomOf="@+id/til_password">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_confirm_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPassword"
+            android:imeOptions="actionDone"
+            android:padding="16dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_register"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="#FCC11A"
+        android:text="Daftar"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:cornerRadius="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/vectorCenter"
+        app:layout_constraintStart_toStartOf="@+id/vectorCenter"
+        app:layout_constraintTop_toBottomOf="@+id/til_confirm_password"
+        app:rippleColor="#33000000" />
+
+    <TextView
+        android:id="@+id/tvText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Sudah punya akun? "
+        app:layout_constraintEnd_toStartOf="@+id/tvMasukDisini"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_register" />
+
+    <TextView
+        android:id="@+id/tvMasukDisini"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="Masuk Disini"
+        android:textColor="#2196F3"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvText"
+        app:layout_constraintTop_toTopOf="@+id/tvText" />
+
+    <ImageView
+        android:id="@+id/iconRainbowRegister"
+        android:layout_width="120dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="Rainbow"
+        android:scaleType="fitEnd"
+        android:src="@drawable/icon_rainbow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iconStar"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="-20dp"
+        android:layout_marginEnd="-20dp"
+        android:src="@drawable/icon_star"
+        app:layout_constraintEnd_toEndOf="@id/vectorCenter"
+        app:layout_constraintTop_toTopOf="@id/vectorCenter" />
+
+    <ImageView
+        android:id="@+id/iconStar2"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="568dp"
+        android:src="@drawable/icon_star"
+        app:layout_constraintEnd_toStartOf="@+id/vectorCenter"
+        app:layout_constraintHorizontal_bias="0.288"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

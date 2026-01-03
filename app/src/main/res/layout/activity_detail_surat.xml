@@ -54,50 +54,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvNamaSuratDetail" />
 
-    <ScrollView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvAyat"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
-        android:padding="16dp"
+        android:clipToPadding="false"
+        android:paddingBottom="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvArtiSuratDetail">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/tvAyat"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ"
-                android:textSize="26sp"
-                android:lineSpacingExtra="12dp"
-                android:textDirection="rtl"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:textColor="#000000" />
-            
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#757575"
-                android:layout_marginVertical="24dp"/>
-
-            <TextView
-                android:id="@+id/tvTerjemahan"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Terjemahan..."
-                android:textSize="16sp"
-                android:lineSpacingExtra="6dp"
-                android:textColor="#212121" />
-
-        </LinearLayout>
-    </ScrollView>
+        app:layout_constraintTop_toBottomOf="@+id/tvArtiSuratDetail"
+        tools:listitem="@layout/item_ayat" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

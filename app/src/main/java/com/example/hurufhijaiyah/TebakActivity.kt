@@ -30,6 +30,9 @@ class TebakActivity : AppCompatActivity() {
     private lateinit var semuaHuruf: List<Huruf>
     private var jawabanBenar = ""
 
+    private val pendingCorrectAnswers = mutableListOf<Huruf>()
+    private val pendingWrongAnswers = mutableListOf<Huruf>()
+
     private fun dialogKeluarKuis() {
         DialogUtils.showConfirmationDialog(
             context = this,
@@ -151,9 +154,18 @@ class TebakActivity : AppCompatActivity() {
         val username = prefs.getString("username", null) ?: return
         val dbHelper = DatabaseHelper(this)
         dbHelper.updateQuizStats(username, skorBenar)
+
+        // Save pending wrong/correct answers to DB
+        for (h in pendingCorrectAnswers) {
+            dbHelper.removeWrongAnswer(username, h.arab)
+        }
+        for (h in pendingWrongAnswers) {
+            dbHelper.addWrongAnswer(username, h.arab, h.latin)
+        }
     }
 
     private fun periksaJawaban(jawaban: String, btn: MaterialButton) {
+        val currentSoal = soalAcak[soalIndex]
 
         if (jawaban == jawabanBenar) {
             skorBenar++
@@ -161,24 +173,9 @@ class TebakActivity : AppCompatActivity() {
             mp.start()
             mp.setOnCompletionListener { it.release() }
             btn.setBackgroundColor(Color.parseColor("#4CAF50")) // hijau
-
-            // Remove from history if correct
-            val prefs = getSharedPreferences("user_prefs", MODE_PRIVATE)
-            val username = prefs.getString("username", null)
-            if (username != null) {
-                val dbHelper = DatabaseHelper(this)
-                // We need to know the arabic char for current answer.
-                // In periksaJawaban we only have 'jawaban'.
-                // 'jawabanBenar' is avail as global.
-                // We need the Huruf object corresponding to 'jawabanBenar'.
-                // But wait, 'jawaban' is the Latin text from button.
-                // 'jawabanBenar' is also Latin.
-                // If correct, 'jawaban' == 'jawabanBenar'.
-                // We need the Arabic text to remove it.
-                // The current question is 'soalAcak[soalIndex]'.
-                val currentSoal = soalAcak[soalIndex]
-                dbHelper.removeWrongAnswer(username, currentSoal.arab)
-            }
+            
+            // Add to pending correct list
+            pendingCorrectAnswers.add(currentSoal)
 
         } else {
             skorSalah++
@@ -187,14 +184,8 @@ class TebakActivity : AppCompatActivity() {
             mp.setOnCompletionListener { it.release() }
             btn.setBackgroundColor(Color.parseColor("#F44336")) // merah
 
-            // Add to history if wrong
-            val prefs = getSharedPreferences("user_prefs", MODE_PRIVATE)
-            val username = prefs.getString("username", null)
-            if (username != null) {
-                val dbHelper = DatabaseHelper(this)
-                val currentSoal = soalAcak[soalIndex]
-                dbHelper.addWrongAnswer(username, currentSoal.arab, currentSoal.latin)
-            }
+            // Add to pending wrong list
+            pendingWrongAnswers.add(currentSoal)
         }
 
         skorBenarText.text = "Benar: $skorBenar"

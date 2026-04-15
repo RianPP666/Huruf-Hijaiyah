@@ -2,11 +2,11 @@ package com.example.hurufhijaiyah
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.android.material.card.MaterialCardView
 
 
 class MenuUtamaActivity : AppCompatActivity() {
@@ -20,48 +20,32 @@ class MenuUtamaActivity : AppCompatActivity() {
             insets
         }
 
-        // Wire menu clicks
-        val btnBelajarHuruf = findViewById<Button>(R.id.btnBelajarHuruf)
-        val btnTebakHuruf = findViewById<Button>(R.id.btnTebakHuruf)
-        val btnRiwayatBelajar= findViewById<Button>(R.id.btnRiwayatBelajar)
-
-        val btnProfil = findViewById<Button>(R.id.btnProfil)
-
-        btnProfil.setOnClickListener {
-            val i = Intent(this, ProfilActivity::class.java)
-            startActivity(i)
+        // Card clicks
+        findViewById<MaterialCardView>(R.id.cardBelajar).setOnClickListener {
+            startActivity(Intent(this, BelajarActivity::class.java))
         }
 
-        btnBelajarHuruf.setOnClickListener {
-            // Belajar Huruf
-            val i = Intent(this, BelajarActivity::class.java)
-            startActivity(i)
-        }
-
-        btnTebakHuruf.setOnClickListener {
-            // Tebak Huruf
+        findViewById<MaterialCardView>(R.id.cardTebak).setOnClickListener {
             DialogUtils.showConfirmationDialog(
                 context = this,
                 title = "Mulai Tebak Huruf",
                 message = "Apakah kamu siap untuk memulai permainan?",
                 positiveButtonText = "Mulai"
             ) { _, _ ->
-                val i = Intent(this, TebakActivity::class.java)
-                startActivity(i)
+                startActivity(Intent(this, TebakActivity::class.java))
             }
         }
 
-        btnRiwayatBelajar.setOnClickListener {
-            // RiwayarBelajar
-            val i = Intent(this, RiwayatBelajarHurufActivity::class.java)
-            startActivity(i)
+        findViewById<MaterialCardView>(R.id.cardRiwayat).setOnClickListener {
+            startActivity(Intent(this, RiwayatBelajarHurufActivity::class.java))
         }
 
-        val btnSuratPendek = findViewById<Button>(R.id.btnSuratPendek)
-        btnSuratPendek.setOnClickListener {
-            // Hafalan Surat
-            val i = Intent(this, DaftarSuratActivity::class.java)
-            startActivity(i)
+        findViewById<MaterialCardView>(R.id.cardSurat).setOnClickListener {
+            startActivity(Intent(this, DaftarSuratActivity::class.java))
+        }
+
+        findViewById<com.google.android.material.button.MaterialButton>(R.id.btnProfil).setOnClickListener {
+            startActivity(Intent(this, ProfilActivity::class.java))
         }
     }
 }

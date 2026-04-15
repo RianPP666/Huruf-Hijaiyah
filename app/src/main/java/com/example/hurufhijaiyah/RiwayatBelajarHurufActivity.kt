@@ -33,9 +33,10 @@ class RiwayatBelajarHurufActivity : AppCompatActivity() {
         val username = prefs.getString("username", null)
 
         if (username != null) {
-            val dbHelper = DatabaseHelper(this)
-            val wrongAnswers = dbHelper.getWrongAnswers(username)
-            rv.adapter = HurufAdapter(wrongAnswers)
+            val firestoreHelper = FirestoreHelper()
+            firestoreHelper.getWrongAnswers(username) { wrongAnswers ->
+                rv.adapter = HurufAdapter(wrongAnswers)
+            }
         }
     }
 }

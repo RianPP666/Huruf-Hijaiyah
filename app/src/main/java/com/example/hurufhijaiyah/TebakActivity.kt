@@ -152,15 +152,15 @@ class TebakActivity : AppCompatActivity() {
 
         val prefs = getSharedPreferences("user_prefs", MODE_PRIVATE)
         val username = prefs.getString("username", null) ?: return
-        val dbHelper = DatabaseHelper(this)
-        dbHelper.updateQuizStats(username, skorBenar)
+        val firestoreHelper = FirestoreHelper()
+        firestoreHelper.updateQuizStats(username, skorBenar)
 
-        // Save pending wrong/correct answers to DB
+        // Save pending wrong/correct answers to Firestore
         for (h in pendingCorrectAnswers) {
-            dbHelper.removeWrongAnswer(username, h.arab)
+            firestoreHelper.removeWrongAnswer(username, h.arab)
         }
         for (h in pendingWrongAnswers) {
-            dbHelper.addWrongAnswer(username, h.arab, h.latin)
+            firestoreHelper.addWrongAnswer(username, h.arab, h.latin)
         }
     }
 
@@ -172,7 +172,7 @@ class TebakActivity : AppCompatActivity() {
             val mp = MediaPlayer.create(this, R.raw.benar)
             mp.start()
             mp.setOnCompletionListener { it.release() }
-            btn.setBackgroundColor(Color.parseColor("#4CAF50")) // hijau
+            btn.setBackgroundColor(Color.parseColor("#2A9D8F")) // hijau teal
             
             // Add to pending correct list
             pendingCorrectAnswers.add(currentSoal)
@@ -182,7 +182,7 @@ class TebakActivity : AppCompatActivity() {
             val mp = MediaPlayer.create(this, R.raw.salah)
             mp.start()
             mp.setOnCompletionListener { it.release() }
-            btn.setBackgroundColor(Color.parseColor("#F44336")) // merah
+            btn.setBackgroundColor(Color.parseColor("#E76F51")) // coral
 
             // Add to pending wrong list
             pendingWrongAnswers.add(currentSoal)
@@ -193,7 +193,7 @@ class TebakActivity : AppCompatActivity() {
 
         // Reset warna + lanjut soal setelah 600ms
         btn.postDelayed({
-            btn.setBackgroundColor(Color.parseColor("#EFE9E3")) // warna original
+            btn.setBackgroundColor(Color.parseColor("#FFFFFF")) // warna original
             soalIndex++
             tampilkanSoal()
         }, 600)

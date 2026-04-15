@@ -3,7 +3,6 @@ package com.example.hurufhijaiyah
 import android.content.Intent
 import android.os.Bundle
 import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.button.MaterialButton
@@ -12,15 +11,7 @@ import com.google.android.material.textfield.TextInputLayout
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // Set layout yang baru dibuat
         setContentView(R.layout.activity_login)
-
-        val tvDaftarDisini = findViewById<TextView>(R.id.tvDaftarDisini)
-
-        tvDaftarDisini.setOnClickListener {
-            val intent = Intent(this, RegisterActivity::class.java)
-            startActivity(intent)
-        }
 
         val tilUsername = findViewById<TextInputLayout>(R.id.til_username)
         val tilPassword = findViewById<TextInputLayout>(R.id.til_password)
@@ -30,7 +21,10 @@ class LoginActivity : AppCompatActivity() {
 
         val btnLogin = findViewById<MaterialButton>(R.id.btn_masuk)
 
-        val dbHelper = DatabaseHelper(this)
+        val firestoreHelper = FirestoreHelper()
+
+        // Seed akun admin default jika belum ada
+        firestoreHelper.seedAdminAccount()
 
         btnLogin.setOnClickListener {
 
@@ -57,19 +51,36 @@ class LoginActivity : AppCompatActivity() {
 
             if (!valid) return@setOnClickListener
 
-            // Check login database
-            if (dbHelper.loginUser(username, password)) {
+            // Disable tombol saat proses login
+            btnLogin.isEnabled = false
+            btnLogin.text = "Memproses..."
 
-                Toast.makeText(this, "Login berhasil!", Toast.LENGTH_SHORT).show()
+            // Check login Firestore
+            firestoreHelper.loginUser(username, password) { success ->
+                if (success) {
+                    firestoreHelper.getUserRole(username) { role ->
+                        val prefs = getSharedPreferences("user_prefs", MODE_PRIVATE)
+                        prefs.edit()
+                            .putString("username", username)
+                            .putString("role", role)
+                            .apply()
 
-                val prefs = getSharedPreferences("user_prefs", MODE_PRIVATE)
-                prefs.edit().putString("username", username).apply()
+                        // Arahkan ke menu berdasarkan role
+                        val targetActivity = when (role) {
+                            "guru" -> MenuGuruActivity::class.java
+                            "admin" -> MenuAdminActivity::class.java
+                            else -> MenuUtamaActivity::class.java // murid
+                        }
 
-                startActivity(Intent(this, MenuUtamaActivity::class.java))
-                finish()
-
-            } else {
-                tilPassword.error = "Username atau password salah"
+                        Toast.makeText(this, "Login berhasil sebagai ${role.replaceFirstChar { it.uppercase() }}!", Toast.LENGTH_SHORT).show()
+                        startActivity(Intent(this, targetActivity))
+                        finish()
+                    }
+                } else {
+                    btnLogin.isEnabled = true
+                    btnLogin.text = "Masuk"
+                    tilPassword.error = "Username atau password salah"
+                }
             }
         }
     }

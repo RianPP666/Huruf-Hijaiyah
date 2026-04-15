@@ -6,14 +6,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bg_cream"
-    tools:context=".MenuUtamaActivity">
+    tools:context=".MenuGuruActivity">
 
-    <!-- Header gradient -->
     <View
         android:id="@+id/headerBg"
         android:layout_width="0dp"
         android:layout_height="200dp"
-        android:background="@drawable/bg_gradient_primary"
+        android:background="@color/role_guru"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -24,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
         android:text="Assalamu'alaikum 👋"
-        android:textColor="#FFFFFF"
+        android:textColor="#CCFFFFFF"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -35,7 +34,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:text="Ayo Belajar Hijaiyah!"
+        android:text="Dashboard Guru"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -43,29 +42,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvGreeting" />
 
-    <!-- Profil button -->
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnProfil"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="20dp"
-        android:backgroundTint="#33FFFFFF"
-        android:insetLeft="0dp"
-        android:insetTop="0dp"
-        android:insetRight="0dp"
-        android:insetBottom="0dp"
-        app:iconPadding="0dp"
-        app:cornerRadius="24dp"
-        app:icon="@drawable/icon_user"
-        app:iconGravity="textStart"
-        app:iconSize="28dp"
-        app:iconTint="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:rippleColor="#33FFFFFF" />
-
-    <!-- Content area with rounded top -->
     <View
         android:id="@+id/contentBg"
         android:layout_width="0dp"
@@ -83,26 +59,26 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginTop="24dp"
-        android:text="Menu Belajar"
+        android:text="Menu Guru"
         android:textColor="@color/text_primary"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/contentBg" />
 
-    <!-- Menu Grid: Belajar Huruf -->
+    <!-- Daftar Murid -->
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cardBelajar"
+        android:id="@+id/cardDaftarMurid"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="8dp"
-        app:cardBackgroundColor="@color/primary_light"
+        app:cardBackgroundColor="@color/role_guru_bg"
         app:cardCornerRadius="20dp"
         app:cardElevation="0dp"
         app:strokeWidth="0dp"
-        app:layout_constraintEnd_toStartOf="@+id/cardTebak"
+        app:layout_constraintEnd_toStartOf="@+id/cardLeaderboard"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvMenuLabel">
 
@@ -117,25 +93,24 @@
             <ImageView
                 android:layout_width="44dp"
                 android:layout_height="44dp"
-                android:src="@drawable/icon_quran" />
+                android:src="@drawable/icon_user" />
 
             <TextView
-                android:id="@+id/btnBelajarHuruf"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:gravity="center"
-                android:text="Belajar\nHuruf"
-                android:textColor="@color/primary_dark"
+                android:text="Daftar\nMurid"
+                android:textColor="@color/role_guru"
                 android:textSize="13sp"
                 android:textStyle="bold"
                 android:lineSpacingExtra="2dp" />
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 
-    <!-- Tebak Huruf -->
+    <!-- Leaderboard -->
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cardTebak"
+        android:id="@+id/cardLeaderboard"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -145,8 +120,8 @@
         app:cardElevation="0dp"
         app:strokeWidth="0dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/cardBelajar"
-        app:layout_constraintTop_toTopOf="@+id/cardBelajar">
+        app:layout_constraintStart_toEndOf="@+id/cardDaftarMurid"
+        app:layout_constraintTop_toTopOf="@+id/cardDaftarMurid">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -159,104 +134,57 @@
             <ImageView
                 android:layout_width="44dp"
                 android:layout_height="44dp"
-                android:src="@drawable/icon_question" />
+                android:src="@drawable/icon_medali" />
 
             <TextView
-                android:id="@+id/btnTebakHuruf"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:gravity="center"
-                android:text="Tebak\nHuruf"
+                android:text="Leaderboard"
                 android:textColor="#BF7B2E"
                 android:textSize="13sp"
-                android:textStyle="bold"
-                android:lineSpacingExtra="2dp" />
+                android:textStyle="bold" />
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 
-    <!-- Riwayat Belajar -->
+    <!-- Profil -->
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cardRiwayat"
+        android:id="@+id/cardProfil"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="12dp"
-        android:layout_marginEnd="8dp"
-        app:cardBackgroundColor="#FFF0E1"
-        app:cardCornerRadius="20dp"
-        app:cardElevation="0dp"
-        app:strokeWidth="0dp"
-        app:layout_constraintEnd_toStartOf="@+id/cardSurat"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardBelajar">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:minHeight="120dp"
-            android:orientation="vertical"
-            android:padding="12dp">
-
-            <ImageView
-                android:layout_width="44dp"
-                android:layout_height="44dp"
-                android:src="@drawable/icon_riwayat" />
-
-            <TextView
-                android:id="@+id/btnRiwayatBelajar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:gravity="center"
-                android:text="Riwayat\nBelajar"
-                android:textColor="#C0621A"
-                android:textSize="13sp"
-                android:textStyle="bold"
-                android:lineSpacingExtra="2dp" />
-        </LinearLayout>
-    </com.google.android.material.card.MaterialCardView>
-
-    <!-- Surat Pendek -->
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cardSurat"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
         android:layout_marginEnd="24dp"
-        app:cardBackgroundColor="#EDE7F6"
+        app:cardBackgroundColor="@color/primary_light"
         app:cardCornerRadius="20dp"
         app:cardElevation="0dp"
         app:strokeWidth="0dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/cardRiwayat"
-        app:layout_constraintTop_toTopOf="@+id/cardRiwayat">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardDaftarMurid">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:minHeight="120dp"
-            android:orientation="vertical"
-            android:padding="12dp">
+            android:minHeight="80dp"
+            android:orientation="horizontal"
+            android:padding="16dp">
 
             <ImageView
-                android:layout_width="44dp"
-                android:layout_height="44dp"
-                android:src="@drawable/icon_quran2" />
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@drawable/baseline_person_outline_24" />
 
             <TextView
-                android:id="@+id/btnSuratPendek"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:gravity="center"
-                android:text="Surat\nPendek"
-                android:textColor="#5E35B1"
-                android:textSize="13sp"
-                android:textStyle="bold"
-                android:lineSpacingExtra="2dp" />
+                android:layout_marginStart="12dp"
+                android:text="Profil Saya"
+                android:textColor="@color/primary_dark"
+                android:textSize="15sp"
+                android:textStyle="bold" />
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 

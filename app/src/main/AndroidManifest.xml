@@ -12,6 +12,30 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HurufHijaiyah">
         <activity
+            android:name=".StatistikGlobalActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TambahUserActivity"
+            android:exported="false" />
+        <activity
+            android:name=".KelolaUserActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MenuAdminActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LeaderboardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DetailProgresMuridActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DaftarMuridActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MenuGuruActivity"
+            android:exported="false" />
+        <activity
             android:name=".RiwayatBelajarHurufActivity"
             android:exported="false" />
         <activity
@@ -32,9 +56,8 @@
         <activity
             android:name=".DetailSuratActivity"
             android:exported="false" />
-        <activity
-            android:name=".RegisterActivity"
-            android:exported="false" />
+
+
         <activity
             android:name=".LoginActivity"
             android:exported="true">

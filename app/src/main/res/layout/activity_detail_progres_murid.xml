@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_cream"
+    tools:context=".DetailProgresMuridActivity">
+
+    <View android:id="@+id/headerBg" android:layout_width="0dp" android:layout_height="220dp"
+        android:background="@color/role_guru"
+        app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.button.MaterialButton android:id="@+id/btnKembali"
+        android:layout_width="42dp" android:layout_height="42dp" android:layout_marginStart="16dp" android:layout_marginTop="32dp"
+        android:backgroundTint="#33FFFFFF" android:insetLeft="0dp" android:insetTop="0dp" android:insetRight="0dp" android:insetBottom="0dp"
+        app:iconPadding="0dp" app:cornerRadius="21dp" app:icon="@drawable/icon_back" app:iconGravity="textStart" app:iconSize="20dp" app:iconTint="#FFFFFF"
+        app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" app:rippleColor="#33FFFFFF" />
+
+    <TextView android:id="@+id/tvTitle" android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_marginTop="44dp" android:text="Progres Murid" android:textColor="#FFFFFF" android:textSize="22sp" android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView android:id="@+id/cardPhoto"
+        android:layout_width="90dp" android:layout_height="90dp" android:layout_marginTop="12dp"
+        app:cardCornerRadius="45dp" app:cardElevation="6dp"
+        app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/tvTitle">
+        <ImageView android:layout_width="90dp" android:layout_height="90dp" android:contentDescription="User Photo" android:scaleType="centerCrop" android:src="@drawable/ic_user" />
+    </androidx.cardview.widget.CardView>
+
+    <View android:id="@+id/contentBg" android:layout_width="0dp" android:layout_height="0dp"
+        android:background="@drawable/bg_rounded_top_white" android:layout_marginTop="-32dp"
+        app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/headerBg" />
+
+    <TextView android:id="@+id/tvUsername" android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_marginTop="16dp" android:text="Username" android:textColor="@color/text_primary" android:textSize="22sp" android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="@+id/contentBg" />
+
+    <androidx.cardview.widget.CardView android:id="@+id/cardStats"
+        android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginHorizontal="24dp" android:layout_marginTop="16dp"
+        app:cardCornerRadius="20dp" app:cardElevation="2dp" app:cardBackgroundColor="@color/primary_light"
+        app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/tvUsername">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="📊 Statistik Belajar" android:textColor="@color/primary_dark" android:textSize="16sp" android:textStyle="bold" />
+            <TextView android:id="@+id/tvTotalKuis" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="Total quiz: 0 kali" android:textColor="@color/text_secondary" android:textSize="14sp" />
+            <TextView android:id="@+id/tvSkorTertinggi" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="Skor tertinggi: 0/10" android:textColor="@color/text_secondary" android:textSize="14sp" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView android:id="@+id/cardHurufSalah"
+        android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginHorizontal="24dp" android:layout_marginTop="12dp"
+        app:cardCornerRadius="20dp" app:cardElevation="2dp" app:cardBackgroundColor="#FFF3E0"
+        app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/cardStats">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="⚠️ Huruf yang Sering Salah" android:textColor="@color/danger" android:textSize="16sp" android:textStyle="bold" />
+            <TextView android:id="@+id/tvHurufSalah" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="Tidak ada" android:textColor="@color/text_secondary" android:textSize="14sp" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

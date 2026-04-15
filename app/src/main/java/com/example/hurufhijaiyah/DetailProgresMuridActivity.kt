@@ -33,7 +33,7 @@ class DetailProgresMuridActivity : AppCompatActivity() {
 
         // Tampilkan nama lengkap
         firestoreHelper.getNamaLengkap(username) { namaLengkap ->
-            tvUsername.text = "$namaLengkap ($username)"
+            tvUsername.text = "$namaLengkap"
         }
 
         // Ambil quiz stats

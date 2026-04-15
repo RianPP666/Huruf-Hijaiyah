@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "244744970235",
+    "project_id": "hijaiyah-pintar",
+    "storage_bucket": "hijaiyah-pintar.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:244744970235:android:a48fd264a38f1e71c0b55e",
+        "android_client_info": {
+          "package_name": "com.example.hurufhijaiyah"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8L1YzI0P17oZOz_CMGsrOPXEyuEzdWnM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

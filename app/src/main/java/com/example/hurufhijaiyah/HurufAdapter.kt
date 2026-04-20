@@ -10,8 +10,8 @@ import androidx.recyclerview.widget.RecyclerView
 class HurufAdapter(private val items: List<Huruf>) : RecyclerView.Adapter<HurufAdapter.VH>() {
 
     class VH(view: View) : RecyclerView.ViewHolder(view) {
-        val tvArabic: TextView = view.findViewById(R.id.tvArabic)
-        val tvLatin: TextView = view.findViewById(R.id.tvLatin)
+        val tvArabic: TextView = view.findViewById(R.id.tvHurufArab)
+        val tvLatin: TextView = view.findViewById(R.id.tvHurufLatin)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VH {

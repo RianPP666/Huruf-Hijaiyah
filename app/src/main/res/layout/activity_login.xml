@@ -5,144 +5,121 @@
     android:layout_height="match_parent"
     android:background="@color/bg_cream">
 
-    <!-- Top gradient header -->
-    <View
-        android:id="@+id/headerBg"
-        android:layout_width="0dp"
-        android:layout_height="320dp"
-        android:background="@drawable/bg_gradient_primary"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tvWelcome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:text="Assalamu'alaikum"
-        android:textColor="#FFFFFF"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tvAppName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:text="Huruf Hijaiyah"
-        android:textColor="#FFFFFF"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvWelcome" />
-
     <ImageView
-        android:id="@+id/imgMosque"
-        android:layout_width="160dp"
-        android:layout_height="160dp"
-        android:layout_marginTop="8dp"
+        android:id="@+id/imgLogo"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_marginTop="64dp"
         android:src="@drawable/icon_mosque"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvAppName" />
-
-    <!-- White card bottom -->
-    <View
-        android:id="@+id/cardBg"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@drawable/bg_rounded_top_white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/headerBg"
-        android:layout_marginTop="-32dp" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvLoginTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Masuk ke Akun"
+        android:layout_marginTop="32dp"
+        android:text="Selamat Datang"
         android:textColor="@color/text_primary"
-        android:textSize="22sp"
+        android:textSize="26sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/cardBg" />
+        app:layout_constraintTop_toBottomOf="@+id/imgLogo" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_username"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+    <TextView
+        android:id="@+id/tvLoginSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Silakan masuk untuk melanjutkan"
+        android:textColor="@color/text_secondary"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvLoginTitle" />
+
+    <!-- Form container -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardForm"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="32dp"
-        android:layout_marginTop="20dp"
-        android:hint="Username"
-        app:boxCornerRadiusBottomEnd="16dp"
-        app:boxCornerRadiusBottomStart="16dp"
-        app:boxCornerRadiusTopEnd="16dp"
-        app:boxCornerRadiusTopStart="16dp"
-        app:startIconDrawable="@drawable/ic_user"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="32dp"
+        app:cardBackgroundColor="@color/surface"
+        app:cardCornerRadius="32dp"
+        app:cardElevation="0dp"
+        app:strokeColor="#E2E8F0"
+        app:strokeWidth="1dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvLoginTitle">
+        app:layout_constraintTop_toBottomOf="@+id/tvLoginSubtitle">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edt_username"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:imeOptions="actionNext"
-            android:inputType="text"
-            android:padding="16dp" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:orientation="vertical"
+            android:paddingHorizontal="24dp"
+            android:paddingTop="32dp"
+            android:paddingBottom="32dp">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_password"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="32dp"
-        android:layout_marginTop="12dp"
-        android:hint="Password"
-        app:boxCornerRadiusTopStart="16dp"
-        app:boxCornerRadiusTopEnd="16dp"
-        app:boxCornerRadiusBottomStart="16dp"
-        app:boxCornerRadiusBottomEnd="16dp"
-        app:startIconDrawable="@drawable/ic_lock"
-        app:endIconMode="password_toggle"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/til_username">
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_username"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Username"
+                app:boxCornerRadiusBottomEnd="16dp"
+                app:boxCornerRadiusBottomStart="16dp"
+                app:boxCornerRadiusTopEnd="16dp"
+                app:boxCornerRadiusTopStart="16dp"
+                app:startIconDrawable="@drawable/ic_user">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edt_password"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            android:imeOptions="actionDone"
-            android:padding="16dp" />
-    </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_username"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_masuk"
-        android:layout_width="0dp"
-        android:layout_height="56dp"
-        android:layout_marginHorizontal="32dp"
-        android:layout_marginTop="24dp"
-        android:backgroundTint="@color/primary"
-        android:text="Masuk"
-        android:textColor="#FFFFFF"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:cornerRadius="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/til_password"
-        app:rippleColor="#33FFFFFF" />
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_password"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="Password"
+                app:boxCornerRadiusBottomEnd="16dp"
+                app:boxCornerRadiusBottomStart="16dp"
+                app:boxCornerRadiusTopEnd="16dp"
+                app:boxCornerRadiusTopStart="16dp"
+                app:endIconMode="password_toggle"
+                app:startIconDrawable="@drawable/ic_lock">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionDone"
+                    android:inputType="textPassword" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_masuk"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="24dp"
+                android:backgroundTint="@color/primary"
+                android:text="Masuk"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:cornerRadius="30dp"
+                app:elevation="0dp"
+                app:rippleColor="#33FFFFFF" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

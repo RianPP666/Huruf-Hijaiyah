@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 class SuratAdapter(private val listSurat: List<Surah>) : RecyclerView.Adapter<SuratAdapter.ViewHolder>() {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val tvNama: TextView = view.findViewById(R.id.tvNamaSurat)
+        val tvNama: TextView = view.findViewById(R.id.tvNamaSuratLatin)
         val tvArti: TextView = view.findViewById(R.id.tvArtiSurat)
     }
 

@@ -27,7 +27,7 @@ class MenuAdminActivity : AppCompatActivity() {
             startActivity(Intent(this, StatistikGlobalActivity::class.java))
         }
 
-        findViewById<MaterialCardView>(R.id.cardProfil).setOnClickListener {
+        findViewById<com.google.android.material.button.MaterialButton>(R.id.btnProfil).setOnClickListener {
             startActivity(Intent(this, ProfilActivity::class.java))
         }
     }

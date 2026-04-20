@@ -8,6 +8,16 @@
     android:background="@color/bg_cream"
     tools:context=".TebakActivity">
 
+    <!-- Top solid header block -->
+    <View
+        android:id="@+id/headerBg"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:background="@color/primary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <!-- Back button -->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnKembali"
@@ -15,7 +25,7 @@
         android:layout_height="42dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
-        android:backgroundTint="@color/primary"
+        android:backgroundTint="#20FFFFFF"
         android:insetLeft="0dp"
         android:insetTop="0dp"
         android:insetRight="0dp"
@@ -30,18 +40,31 @@
         app:layout_constraintTop_toTopOf="parent"
         app:rippleColor="#33FFFFFF" />
 
+    <TextView
+        android:id="@+id/tvHeaderTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tebak Huruf"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/btnKembali"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnKembali" />
+
     <!-- Score boxes -->
     <androidx.cardview.widget.CardView
         android:id="@+id/cardBenar"
         android:layout_width="110dp"
         android:layout_height="40dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        app:cardCornerRadius="12dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="20dp"
+        app:cardCornerRadius="20dp"
         app:cardBackgroundColor="@color/success"
         app:cardElevation="0dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnKembali">
+        app:layout_constraintTop_toBottomOf="@+id/headerBg">
 
         <TextView
             android:id="@+id/skor_benar"
@@ -58,8 +81,8 @@
         android:id="@+id/cardSalah"
         android:layout_width="110dp"
         android:layout_height="40dp"
-        android:layout_marginEnd="16dp"
-        app:cardCornerRadius="12dp"
+        android:layout_marginEnd="24dp"
+        app:cardCornerRadius="20dp"
         app:cardBackgroundColor="@color/danger"
         app:cardElevation="0dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -81,7 +104,7 @@
         android:id="@+id/text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:text="Coba tebak, huruf apakah ini?"
         android:textColor="@color/text_primary"
         android:textSize="17sp"
@@ -91,14 +114,16 @@
         app:layout_constraintTop_toBottomOf="@+id/cardBenar" />
 
     <!-- Question card -->
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardQuestion"
         android:layout_width="180dp"
         android:layout_height="180dp"
-        android:layout_marginTop="12dp"
-        app:cardCornerRadius="24dp"
-        app:cardBackgroundColor="@color/primary_light"
-        app:cardElevation="4dp"
+        android:layout_marginTop="16dp"
+        app:cardBackgroundColor="@color/surface"
+        app:cardCornerRadius="32dp"
+        app:cardElevation="0dp"
+        app:strokeColor="#E2E8F0"
+        app:strokeWidth="1dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text">
@@ -112,14 +137,14 @@
             android:textColor="@color/primary_dark"
             android:textSize="90sp"
             android:textStyle="bold" />
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 
     <!-- Answer label -->
     <TextView
         android:id="@+id/text2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="24dp"
         android:text="Pilih tulisan latinnya!"
         android:textColor="@color/text_primary"
         android:textSize="16sp"
@@ -134,20 +159,20 @@
         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:layout_width="150dp"
         android:layout_height="60dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:backgroundTint="#FFFFFF"
         android:text="Pilihan 1"
         android:textColor="@color/text_primary"
         android:textSize="17sp"
         android:textStyle="bold"
-        app:cornerRadius="16dp"
-        app:strokeColor="@color/primary"
+        app:cornerRadius="20dp"
+        app:strokeColor="#E2E8F0"
         app:strokeWidth="2dp"
         app:layout_constraintEnd_toStartOf="@+id/btnPilihan2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text2"
-        app:rippleColor="#330D7377" />
+        app:rippleColor="#330EA5E9" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnPilihan2"
@@ -155,39 +180,39 @@
         android:layout_width="150dp"
         android:layout_height="60dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="16dp"
         android:backgroundTint="#FFFFFF"
         android:text="Pilihan 2"
         android:textColor="@color/text_primary"
         android:textSize="17sp"
         android:textStyle="bold"
-        app:cornerRadius="16dp"
-        app:strokeColor="@color/primary"
+        app:cornerRadius="20dp"
+        app:strokeColor="#E2E8F0"
         app:strokeWidth="2dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnPilihan1"
         app:layout_constraintTop_toBottomOf="@+id/text2"
-        app:rippleColor="#330D7377" />
+        app:rippleColor="#330EA5E9" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnPilihan3"
         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:layout_width="150dp"
         android:layout_height="60dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="8dp"
         android:backgroundTint="#FFFFFF"
         android:text="Pilihan 3"
         android:textColor="@color/text_primary"
         android:textSize="17sp"
         android:textStyle="bold"
-        app:cornerRadius="16dp"
-        app:strokeColor="@color/primary"
+        app:cornerRadius="20dp"
+        app:strokeColor="#E2E8F0"
         app:strokeWidth="2dp"
         app:layout_constraintEnd_toStartOf="@+id/btnPilihan4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnPilihan1"
-        app:rippleColor="#330D7377" />
+        app:rippleColor="#330EA5E9" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnPilihan4"
@@ -195,18 +220,18 @@
         android:layout_width="150dp"
         android:layout_height="60dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="12dp"
         android:backgroundTint="#FFFFFF"
         android:text="Pilihan 4"
         android:textColor="@color/text_primary"
         android:textSize="17sp"
         android:textStyle="bold"
-        app:cornerRadius="16dp"
-        app:strokeColor="@color/primary"
+        app:cornerRadius="20dp"
+        app:strokeColor="#E2E8F0"
         app:strokeWidth="2dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnPilihan3"
         app:layout_constraintTop_toBottomOf="@+id/btnPilihan2"
-        app:rippleColor="#330D7377" />
+        app:rippleColor="#330EA5E9" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

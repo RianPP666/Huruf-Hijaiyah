@@ -3,45 +3,47 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <!-- New Design System: "Falaq" Theme -->
-    <color name="primary">#0D7377</color>
-    <color name="primary_dark">#095B5E</color>
-    <color name="primary_light">#E0F2F1</color>
-    <color name="secondary">#F4A261</color>
-    <color name="secondary_light">#FFF0DD</color>
-    <color name="accent_gold">#E9C46A</color>
+    <!-- New Design System: "Neo-Edu" Theme -->
+    <color name="primary">#0EA5E9</color> <!-- Vibrant Sky Blue -->
+    <color name="primary_dark">#0284C7</color>
+    <color name="primary_light">#E0F2FE</color>
+    <color name="secondary">#F59E0B</color> <!-- Amber -->
+    <color name="secondary_light">#FEF3C7</color>
+    <color name="accent_gold">#EAB308</color>
 
-    <color name="bg_cream">#FDF6EE</color>
+    <!-- Ulra-clean Background Surface -->
+    <color name="bg_cream">#F8FAFC</color> <!-- Soft Slate / Cool White -->
     <color name="bg_white">#FFFFFF</color>
     <color name="surface">#FFFFFF</color>
 
-    <color name="text_primary">#264653</color>
-    <color name="text_secondary">#6B7C85</color>
-    <color name="text_hint">#A0ADB3</color>
+    <color name="text_primary">#334155</color> <!-- Dark Slate Gray -->
+    <color name="text_secondary">#64748B</color>
+    <color name="text_hint">#94A3B8</color>
 
-    <color name="success">#2A9D8F</color>
-    <color name="danger">#E76F51</color>
-    <color name="warning">#F4A261</color>
+    <!-- Flat Status Colors -->
+    <color name="success">#10B981</color> <!-- Emerald Green -->
+    <color name="danger">#F43F5E</color>  <!-- Rose -->
+    <color name="warning">#F59E0B</color>
 
-    <!-- Role Colors -->
-    <color name="role_murid">#0D7377</color>
-    <color name="role_murid_bg">#E0F2F1</color>
-    <color name="role_guru">#264653</color>
-    <color name="role_guru_bg">#E8EEF1</color>
-    <color name="role_admin">#6C3483</color>
-    <color name="role_admin_bg">#F3E5F5</color>
+    <!-- Role Distinct Colors -->
+    <color name="role_murid">#0EA5E9</color>
+    <color name="role_murid_bg">#E0F2FE</color>
+    <color name="role_guru">#10B981</color>
+    <color name="role_guru_bg">#D1FAE5</color>
+    <color name="role_admin">#8B5CF6</color> <!-- Modern Violet -->
+    <color name="role_admin_bg">#EDE9FE</color>
 
     <!-- Quiz Colors -->
-    <color name="quiz_correct">#2A9D8F</color>
-    <color name="quiz_wrong">#E76F51</color>
-    <color name="quiz_option">#F5F1EB</color>
+    <color name="quiz_correct">#10B981</color>
+    <color name="quiz_wrong">#F43F5E</color>
+    <color name="quiz_option">#F8FAFC</color> <!-- Light Slate -->
 
     <!-- Leaderboard -->
-    <color name="gold">#F4A261</color>
-    <color name="silver">#B0BEC5</color>
-    <color name="bronze">#CD7F32</color>
+    <color name="gold">#F59E0B</color>
+    <color name="silver">#94A3B8</color>
+    <color name="bronze">#D97706</color>
 
-    <!-- Legacy (keep for compatibility) -->
-    <color name="blue">#AEE2FF</color>
-    <color name="dark_blue">#80CDF8</color>
+    <!-- Legacy (keep for compatibility if any unused file left) -->
+    <color name="blue">#38BDF8</color>
+    <color name="dark_blue">#0284C7</color>
 </resources>

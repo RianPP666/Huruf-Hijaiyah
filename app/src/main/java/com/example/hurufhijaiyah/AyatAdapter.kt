@@ -11,7 +11,7 @@ class AyatAdapter(private val listAyat: List<Ayat>) : RecyclerView.Adapter<AyatA
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val tvNomor: TextView = view.findViewById(R.id.tvNomorAyat)
         val tvArab: TextView = view.findViewById(R.id.tvAyatArab)
-        val tvTerjemahan: TextView = view.findViewById(R.id.tvAyatTerjemahan)
+        val tvTerjemahan: TextView = view.findViewById(R.id.tvTerjemahan)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

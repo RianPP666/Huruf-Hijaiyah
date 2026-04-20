@@ -175,7 +175,6 @@ class FirestoreHelper {
 
     fun getLeaderboard(callback: (List<User>) -> Unit) {
         usersCol.whereEqualTo("role", "murid")
-            .orderBy("highest_score", Query.Direction.DESCENDING)
             .get()
             .addOnSuccessListener { snapshot ->
                 val list = snapshot.documents.map { doc ->
@@ -186,10 +185,13 @@ class FirestoreHelper {
                         totalQuiz = doc.getLong("total_quiz")?.toInt() ?: 0,
                         highestScore = doc.getLong("highest_score")?.toInt() ?: 0
                     )
-                }
+                }.sortedByDescending { it.highestScore }
                 callback(list)
             }
-            .addOnFailureListener { callback(emptyList()) }
+            .addOnFailureListener { e ->
+                android.util.Log.e("FirestoreLeaderboard", "Error: ${e.message}")
+                callback(emptyList()) 
+            }
     }
 
     // ===================================================

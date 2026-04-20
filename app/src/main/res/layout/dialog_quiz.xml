@@ -1,83 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="24dp"
-    android:background="@drawable/dialog_background">
+    android:layout_margin="16dp"
+    app:cardBackgroundColor="@color/surface"
+    app:cardCornerRadius="32dp"
+    app:cardElevation="0dp"
+    app:strokeWidth="1dp"
+    app:strokeColor="#E2E8F0">
 
-    <!-- Bintang -->
-    <ImageView
-        android:id="@+id/iv_star"
-        android:layout_width="160dp"
-        android:layout_height="56dp"
-        android:src="@drawable/icon_star_dialog"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <!-- Judul -->
-    <TextView
-        android:id="@+id/txtTitle"
-        android:layout_width="0dp"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
         android:gravity="center"
-        android:text="Hebat! Kamu sudah menyelesaikan kuis!"
-        android:textColor="@color/text_primary"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/iv_star"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:orientation="vertical"
+        android:padding="32dp">
 
-    <!-- Score -->
-    <TextView
-        android:id="@+id/txtScore"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:text="7/10"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        android:textColor="@color/primary"
-        app:layout_constraintTop_toBottomOf="@id/txtTitle"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        <ImageView
+            android:id="@+id/ivIcon"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:contentDescription="Icon Quiz" />
 
-    <!-- Tombol Riwayat -->
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnRiwayat"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="20dp"
-        android:backgroundTint="@color/primary"
-        android:text="Riwayat Belajar Huruf"
-        android:textColor="#FFFFFF"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        app:cornerRadius="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtScore" />
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="Title"
+            android:textColor="@color/text_primary"
+            android:textSize="22sp"
+            android:textStyle="bold" />
 
-    <!-- Tombol Menu -->
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnMenu"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="8dp"
-        android:backgroundTint="@color/secondary"
-        android:text="Kembali ke Menu"
-        android:textColor="#FFFFFF"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        app:cornerRadius="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnRiwayat"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        <TextView
+            android:id="@+id/tvMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="Message"
+            android:textColor="@color/text_secondary"
+            android:textSize="15sp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/tvScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="Skor Kamu: 10/10"
+            android:textColor="@color/text_primary"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnRiwayat"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:text="Ulangi\nSalah"
+                android:textColor="@color/text_primary"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:cornerRadius="28dp"
+                app:strokeColor="#E2E8F0"
+                app:strokeWidth="2dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnMenu"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/primary"
+                android:text="Kembali\nMenu"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:cornerRadius="28dp"
+                app:elevation="0dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

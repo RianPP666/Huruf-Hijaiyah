@@ -3,60 +3,56 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginHorizontal="16dp"
-    android:layout_marginVertical="6dp"
+    android:layout_margin="8dp"
     app:cardBackgroundColor="@color/surface"
-    app:cardCornerRadius="16dp"
-    app:cardElevation="2dp"
-    app:strokeWidth="0dp">
+    app:cardCornerRadius="20dp"
+    app:cardElevation="0dp"
+    app:strokeColor="#E2E8F0"
+    app:strokeWidth="1dp">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp">
+        android:orientation="vertical"
+        android:padding="20dp">
 
-        <TextView
-            android:id="@+id/tvNomorAyat"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:background="@drawable/circle_bg"
-            android:gravity="center"
-            android:text="1"
-            android:textColor="#FFFFFF"
-            android:textSize="13sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/tvAyatArab"
-            android:layout_width="0dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:layout_marginBottom="8dp"
-            android:gravity="end"
-            android:lineSpacingExtra="8dp"
-            android:text="بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ"
-            android:textColor="@color/text_primary"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/tvNomorAyat"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvNomorAyat"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="@drawable/bg_gradient_primary"
+                android:gravity="center"
+                android:text="1"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvAyatArab"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:text="بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ"
+                android:textColor="@color/text_primary"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+        </LinearLayout>
 
         <TextView
-            android:id="@+id/tvAyatTerjemahan"
-            android:layout_width="0dp"
+            android:id="@+id/tvTerjemahan"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:lineSpacingExtra="4dp"
-            android:text="1. Dengan nama Allah Yang Maha Pengasih, Maha Penyayang."
+            android:layout_marginTop="16dp"
+            android:text="Dengan menyebut nama Allah Yang Maha Pemurah lagi Maha Penyayang."
             android:textColor="@color/text_secondary"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/tvAyatArab"
-            app:layout_constraintTop_toBottomOf="@id/tvAyatArab" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
+            android:textSize="14sp" />
+    </LinearLayout>
 </com.google.android.material.card.MaterialCardView>

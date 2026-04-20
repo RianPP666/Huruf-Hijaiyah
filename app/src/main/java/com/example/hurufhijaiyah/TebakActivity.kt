@@ -4,6 +4,7 @@ import android.content.Intent
 import android.graphics.Color
 import android.media.MediaPlayer
 import android.os.Bundle
+import android.view.View
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -128,12 +129,13 @@ class TebakActivity : AppCompatActivity() {
         mp.start()
         mp.setOnCompletionListener { it.release() }
 
-        val txtScore = dialogView.findViewById<TextView>(R.id.txtScore)
-        val btnRiwayat = dialogView.findViewById<MaterialButton>(R.id.btnRiwayat)
-        val btnMenu = dialogView.findViewById<MaterialButton>(R.id.btnMenu)
+        val tvScore = dialogView.findViewById<TextView>(R.id.tvScore)
+        val btnRiwayat = dialogView.findViewById<com.google.android.material.button.MaterialButton>(R.id.btnRiwayat)
+        val btnMenu = dialogView.findViewById<com.google.android.material.button.MaterialButton>(R.id.btnMenu)
 
         // TAMPILKAN SKOR → 7/10
-        txtScore.text = "$skorBenar / 10"
+        tvScore.text = "Skor Kamu: $skorBenar / 10"
+        tvScore.visibility = View.VISIBLE
 
         // Tombol ke riwayat huruf salah
         btnRiwayat.setOnClickListener {
